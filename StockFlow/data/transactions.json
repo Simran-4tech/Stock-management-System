@@ -1,0 +1,68 @@
+[
+  {
+    "transaction_id": "TX-INIT-001",
+    "timestamp": "2026-10-01 10:00:00",
+    "product_id": "P001",
+    "product_name": "Notebook",
+    "movement_type": "Stock In",
+    "quantity_changed": 100,
+    "previous_quantity": 0,
+    "new_quantity": 100,
+    "notes": "Initial inventory setup"
+  },
+  {
+    "transaction_id": "TX-INIT-002",
+    "timestamp": "2026-10-02 11:30:00",
+    "product_id": "P002",
+    "product_name": "Pen",
+    "movement_type": "Stock In",
+    "quantity_changed": 200,
+    "previous_quantity": 0,
+    "new_quantity": 200,
+    "notes": "Initial inventory setup"
+  },
+  {
+    "transaction_id": "TX-INIT-003",
+    "timestamp": "2026-10-03 09:15:00",
+    "product_id": "P003",
+    "product_name": "School Bag",
+    "movement_type": "Stock In",
+    "quantity_changed": 15,
+    "previous_quantity": 0,
+    "new_quantity": 15,
+    "notes": "Initial batch"
+  },
+  {
+    "transaction_id": "TX-INIT-004",
+    "timestamp": "2026-10-03 14:00:00",
+    "product_id": "P003",
+    "product_name": "School Bag",
+    "movement_type": "Sale",
+    "quantity_changed": -7,
+    "previous_quantity": 15,
+    "new_quantity": 8,
+    "notes": "School reopening rush"
+  },
+  {
+    "transaction_id": "TX-INIT-005",
+    "timestamp": "2026-10-04 14:20:00",
+    "product_id": "P004",
+    "product_name": "Pencil",
+    "movement_type": "Stock In",
+    "quantity_changed": 15,
+    "previous_quantity": 0,
+    "new_quantity": 15,
+    "notes": "Initial shipment"
+  },
+  {
+    "transaction_id": "TX-INIT-006",
+    "timestamp": "2026-10-05 16:45:00",
+    "product_id": "P005",
+    "product_name": "Water Bottle",
+    "movement_type": "Sale",
+    "quantity_changed": -25,
+    "previous_quantity": 25,
+    "new_quantity": 0,
+    "notes": "Stock cleared - zero balance"
+  }
+]

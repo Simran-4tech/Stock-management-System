@@ -1,0 +1,57 @@
+[
+  {
+    "product_id": "P001",
+    "product_name": "Notebook",
+    "category": "Stationery",
+    "unit_price": 50.0,
+    "stock_quantity": 100,
+    "reorder_level": 20,
+    "date_created": "2026-10-01 10:00:00",
+    "last_updated": "2026-10-01 10:00:00",
+    "is_sample": true
+  },
+  {
+    "product_id": "P002",
+    "product_name": "Pen",
+    "category": "Stationery",
+    "unit_price": 10.0,
+    "stock_quantity": 200,
+    "reorder_level": 50,
+    "date_created": "2026-10-02 11:30:00",
+    "last_updated": "2026-10-02 11:30:00",
+    "is_sample": true
+  },
+  {
+    "product_id": "P003",
+    "product_name": "School Bag",
+    "category": "Accessories",
+    "unit_price": 750.0,
+    "stock_quantity": 8,
+    "reorder_level": 10,
+    "date_created": "2026-10-03 09:15:00",
+    "last_updated": "2026-10-03 09:15:00",
+    "is_sample": true
+  },
+  {
+    "product_id": "P004",
+    "product_name": "Pencil",
+    "category": "Stationery",
+    "unit_price": 5.0,
+    "stock_quantity": 15,
+    "reorder_level": 20,
+    "date_created": "2026-10-04 14:20:00",
+    "last_updated": "2026-10-04 14:20:00",
+    "is_sample": true
+  },
+  {
+    "product_id": "P005",
+    "product_name": "Water Bottle",
+    "category": "Home & Living",
+    "unit_price": 150.0,
+    "stock_quantity": 0,
+    "reorder_level": 10,
+    "date_created": "2026-10-05 16:45:00",
+    "last_updated": "2026-10-05 16:45:00",
+    "is_sample": true
+  }
+]

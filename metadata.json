@@ -1,0 +1,6 @@
+{
+  "name": "StockFlow - Inventory & Stock Management System",
+  "description": "A comprehensive Python & Streamlit inventory and stock management system with live tracking, stock additions, sales, analytics, low-stock alerts, and reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

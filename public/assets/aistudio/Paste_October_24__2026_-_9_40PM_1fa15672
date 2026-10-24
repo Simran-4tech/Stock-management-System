@@ -1,0 +1,926 @@
+# COMPLETE PROJECT PROMPT: STOCKFLOW — INVENTORY AND STOCK MANAGEMENT SYSTEM
+
+Act as a senior Python developer, software engineer, UI/UX designer, and software testing engineer.
+
+Build a complete, fully functional, professional-looking **Inventory and Stock Management System** called **StockFlow** for a small shop or storeroom.
+
+This is an academic mini-project for the subject **CSE1012 – Problem Solving using Python**.
+
+I want a real, runnable application, not just a UI prototype or static dashboard. All forms, buttons, calculations, navigation, stock operations, reports, and data storage must work correctly.
+
+Use the uploaded dashboard reference image as the primary visual inspiration. Reproduce its overall design style, including the dark navy background, cyan neon accents, purple highlights, analytics charts, modern metric cards, sidebar navigation, stock alerts, and professional product table.
+
+Preserve the academic Python requirements while creating a polished application suitable for project demonstration and viva examination.
+
+# 1. TECHNOLOGY STACK AND ARCHITECTURE
+
+Use the following technologies:
+
+- **Programming language:** Python 3.10 or later.
+- **User interface:** Streamlit.
+- **Data storage:** JSON files.
+- **Data processing:** Python dictionaries, lists, sets, functions, loops, and numeric operations.
+- **Validation:** Conditional statements, exception handling, and regular expressions.
+- **Reports:** CSV exports using Python's csv module or Pandas when useful.
+- **Charts:** Streamlit charts or a compatible charting library.
+
+Organize the project into separate modules for application logic, data persistence, and report generation.
+
+The application must run locally on a computer.
+
+IMPORTANT COMPATIBILITY REQUIREMENT:
+
+Google AI Studio may generate applications using a different runtime from Python and Streamlit. If the active environment cannot run Streamlit, do not silently replace the required Python backend with JavaScript.
+
+Instead, generate the complete Python project as downloadable files or a ZIP archive, and provide clear instructions for running it locally. If the environment supports a live preview, explain any runtime limitations and provide the appropriate alternative.
+
+# 2. APPLICATION BRANDING AND VISUAL DESIGN
+
+Application name: **StockFlow**
+
+Subtitle: *Inventory Management System*
+
+Create a modern, premium, futuristic inventory dashboard inspired by the uploaded reference image.
+
+The interface should look like a professional SaaS business application with a dark technology-inspired appearance.
+
+## Exact colour palette
+
+Use these colours consistently.
+
+| Element | Colour |
+|---|---|
+| Main background | #061426 |
+| Sidebar background | #081A2F |
+| Main card background | #0B2038 |
+| Secondary panels | #102A46 |
+| Borders | #174567 |
+| Primary cyan | #00D4FF |
+| Electric blue | #168BFF |
+| Purple | #8B5CF6 |
+| Violet | #7C3AED |
+| Success green | #00D6A3 |
+| Warning yellow | #FFB020 |
+| Danger red/pink | #FF4D79 |
+| Primary text | #F1F7FF |
+| Secondary text | #94A9C3 |
+| Muted text | #7186A3 |
+
+### Design rules
+
+- Use deep navy backgrounds for the application and sidebar.
+- Use dark blue cards with subtle blue borders.
+- Use cyan for icons, links, focus states, and important information.
+- Use purple and violet gradients for selected navigation items and primary actions.
+- Use green for successful operations and healthy stock.
+- Use amber for low-stock warnings.
+- Use red or pink for out-of-stock alerts and destructive actions.
+- Use white text for important labels and numbers.
+- Use muted blue-grey text for descriptions and secondary information.
+- Use rounded cards with approximately 10–16px corner radii.
+- Add subtle shadows and restrained neon glow effects.
+- Use consistent spacing, readable typography, and clean alignment.
+- Use simple, consistent icons.
+- Include smooth, subtle hover effects where supported.
+- Avoid excessive animation, clutter, and overly bright effects.
+- Ensure good contrast and readability.
+- Make the application responsive on desktop and laptop screens.
+
+Do not use static screenshots as a substitute for functional interface components.
+
+# 3. APPLICATION LAYOUT
+
+Build a complete dashboard with three main areas:
+
+1. A left sidebar for navigation.
+2. A top header containing search and user information.
+3. A main content area for dashboard cards, tables, charts, and forms.
+
+## Sidebar
+
+At the top, display a glowing geometric cube or box icon, the name **StockFlow**, and the subtitle *Inventory Management*.
+
+Include these navigation items:
+
+1. Dashboard
+2. Products
+3. Add Product
+4. Update Stock
+5. Record Sale
+6. Stock History
+7. Low-Stock Alerts
+8. Reports
+9. Settings
+10. Project Information
+
+Use suitable icons for each item.
+
+The active navigation item should have a blue-to-purple gradient, rounded corners, and a subtle glow. Inactive items should use muted text with cyan or blue icons.
+
+Include a small decorative cyan wave or abstract line graphic near the bottom of the sidebar if practical.
+
+Every navigation item must open its correct functional page.
+
+## Top header
+
+Include:
+
+- A product search bar with the placeholder "Search products, category or ID..."
+- A notification bell with an indicator when alerts exist.
+- A circular user avatar.
+- A welcome message such as "Hello, Admin".
+- A date display.
+
+The search bar must perform real searches against the inventory data. Notifications should reflect actual low-stock and out-of-stock records.
+
+# 4. DASHBOARD
+
+Create a visually attractive dashboard home page with a title:
+
+**Dashboard**
+
+Subtitle: *Overview of your inventory*
+
+Display six summary cards.
+
+### Card 1: Total Products
+
+Show the total number of distinct products currently stored in the inventory.
+
+Use a cyan icon.
+
+### Card 2: Stock Value
+
+Display the total inventory value in Indian Rupees.
+
+Use a purple icon.
+
+Calculate it using:
+
+Total Inventory Value = Sum of (Product Price × Product Quantity)
+
+### Card 3: Low Stock
+
+Display the number of products whose stock quantity is less than or equal to their reorder level, excluding products with zero quantity because they are counted separately as out of stock.
+
+Use an amber warning icon.
+
+### Card 4: In Stock
+
+Display the total number of physical units currently available across all products.
+
+Use a teal green icon.
+
+### Card 5: Out of Stock
+
+Display the number of products whose stock quantity is zero.
+
+Use a red or pink icon.
+
+### Card 6: Total Categories
+
+Display the number of distinct product categories represented in the inventory.
+
+Use a blue icon.
+
+All statistics must be calculated from actual saved inventory data. They must update automatically whenever products or stock quantities change.
+
+Use large bold white numbers, small muted labels, colourful icons, subtle borders, and consistent card dimensions.
+
+Do not use fabricated percentage changes or invented historical comparisons.
+
+## Dashboard charts
+
+### Stock Overview
+
+Display a line or area chart showing inventory movement or stock trends over time using recorded transaction history.
+
+Use cyan and electric blue styling.
+
+If historical data is insufficient, show a clear empty state instead of inventing historical values.
+
+### Product Distribution
+
+Create a donut chart showing product distribution by category.
+
+Use cyan, purple, blue, and green for the segments.
+
+Display the total product count in the centre if the chart library supports it.
+
+### Inventory Valuation
+
+Show inventory value by category using a bar chart.
+
+Calculate each category's value from the actual product prices and quantities.
+
+### Recent Products
+
+Display recently added or updated products in a compact table.
+
+### Stock Alerts
+
+Display the current low-stock and out-of-stock products.
+
+### Quick Actions
+
+Add functional buttons for:
+
+- Add New Product
+- View All Products
+- Update Stock
+- Record Sale
+- Generate Report
+
+Use a prominent purple gradient for the primary action and dark blue buttons with cyan borders for secondary actions.
+
+# 5. PRODUCT DATA MODEL
+
+Each product must contain the following fields:
+
+- Product ID
+- Product Name
+- Unit Price
+- Current Stock Quantity
+- Reorder Level
+- Category
+- Date Created
+- Last Updated Date
+
+Use suitable data types.
+
+Product IDs must be unique. Use a consistent identifier format containing letters, numbers, hyphens, and underscores.
+
+Store dates in a consistent format.
+
+Calculate the individual inventory value as:
+
+Product Inventory Value = Unit Price × Current Stock Quantity
+
+Display currency values in Indian Rupees (₹), with two decimal places where appropriate.
+
+# 6. ADD PRODUCT
+
+Create a functional Add Product page.
+
+Include a form with fields for:
+
+- Product ID
+- Product Name
+- Unit Price
+- Stock Quantity
+- Reorder Level
+- Category
+
+Requirements:
+
+- Product ID is required.
+- Product ID must follow the accepted identifier format.
+- Product ID must be unique.
+- Product name cannot be empty.
+- Price must be a valid positive number.
+- Quantity must be a non-negative integer.
+- Reorder level must be a non-negative integer.
+- Category must be valid and non-empty, or assigned a sensible default.
+- Validate all fields before saving.
+- Prevent duplicate records.
+- Save the product to persistent storage.
+- Record the creation date and last updated date.
+- Display clear success and error messages.
+- Clear the form after a successful submission when appropriate.
+
+Use dark form cards, cyan focus borders, white labels, purple primary buttons, and green success notifications.
+
+# 7. VIEW, SEARCH, FILTER, EDIT, AND DELETE PRODUCTS
+
+Create a Products page that displays all saved products in a professional dark-themed table.
+
+Include these columns:
+
+- Product ID
+- Product Name
+- Category
+- Unit Price
+- Stock Quantity
+- Reorder Level
+- Inventory Value
+- Stock Status
+- Actions
+
+Use cyan highlights for product IDs, white product names, muted secondary text, and subtle blue row separators.
+
+### Search
+
+Allow searching by:
+
+- Product ID
+- Product Name
+- Category
+
+Product name and category searches should be case-insensitive.
+
+### Filters
+
+Provide filters for:
+
+- Category
+- Stock Status
+- Low Stock
+- Out of Stock
+
+### Edit Product
+
+Allow users to edit product names, prices, categories, and reorder levels.
+
+Allow stock quantity corrections through a clearly identified adjustment workflow so that stock changes are traceable.
+
+Validate all changes and update the last modified date.
+
+### Delete Product
+
+Allow users to delete products after a confirmation step.
+
+Prevent accidental deletion.
+
+Display success or error notifications.
+
+All actions must update persistent storage and dashboard statistics.
+
+### Stock status
+
+Use the following visual badges:
+
+- Green: In Stock
+- Amber: Low Stock
+- Red/Pink: Out of Stock
+
+Determine the status from the current stock quantity and reorder level.
+
+A product with zero quantity must be classified as Out of Stock, even when its reorder level is zero.
+
+# 8. STOCK ADDITION
+
+Create a functional Update Stock or Stock In page.
+
+Include:
+
+- Product selector.
+- Product ID and product name.
+- Current stock quantity.
+- Quantity to add.
+- Optional notes.
+- Confirmation button.
+
+When a valid stock addition is submitted:
+
+1. Verify the product exists.
+2. Validate that the quantity added is a positive integer.
+3. Record the previous quantity.
+4. Increase the stock quantity.
+5. Calculate the new quantity.
+6. Update the product's last modified date.
+7. Record the transaction in stock movement history.
+8. Save all changes to persistent storage.
+9. Refresh dashboard statistics and alerts.
+10. Display a success message with the updated quantity.
+
+Invalid transactions must not change inventory data.
+
+# 9. RECORD SALE
+
+Create a separate Record Sale page.
+
+Include:
+
+- Product selector.
+- Product ID and name.
+- Available quantity.
+- Quantity sold.
+- Optional notes.
+- Confirmation button.
+
+When a valid sale is submitted:
+
+1. Verify the product exists.
+2. Validate that the sale quantity is a positive integer.
+3. Ensure the sale quantity does not exceed available stock.
+4. Record the previous quantity.
+5. Subtract the sold quantity.
+6. Calculate the remaining quantity.
+7. Update the product's last modified date.
+8. Save a transaction record.
+9. Update inventory data and dashboard statistics.
+10. Display a success message showing the remaining stock.
+
+Never allow negative stock.
+
+Do not change inventory data when validation fails.
+
+This project tracks inventory movement, not payment processing. Do not invent payment functionality or calculate profit without the necessary cost data.
+
+# 10. STOCK MOVEMENT HISTORY
+
+Maintain a complete transaction history for stock additions, sales, and manual adjustments.
+
+Each transaction should contain:
+
+- Transaction ID
+- Date and time
+- Product ID
+- Product Name
+- Movement Type
+- Quantity Changed
+- Previous Quantity
+- New Quantity
+- Optional Notes
+
+Use the movement types:
+
+- Stock In
+- Sale
+- Adjustment
+
+For adjustments, record both increases and decreases accurately.
+
+Create a searchable transaction table with filters for:
+
+- Product ID
+- Product Name
+- Movement Type
+- Date Range
+
+Allow users to export the transaction history as CSV.
+
+Do not allow normal users to edit historical transactions directly.
+
+Every successful stock movement must be recorded consistently with the inventory update.
+
+# 11. LOW-STOCK AND REORDER MANAGEMENT
+
+Create a dedicated Low-Stock Alerts page.
+
+A product is considered low-stock when:
+
+- Its quantity is greater than zero.
+- Its quantity is less than or equal to its reorder level.
+
+A product is out of stock when its quantity equals zero.
+
+Display:
+
+- Low-stock products.
+- Out-of-stock products.
+- Product ID.
+- Product Name.
+- Category.
+- Current Quantity.
+- Reorder Level.
+- Suggested quantity to reach the reorder level, calculated as the greater of zero and reorder level minus current quantity.
+
+Provide a functional button to open the stock-addition workflow for a selected product.
+
+Use amber warning icons for low-stock items and red or pink warning icons for out-of-stock products.
+
+Update alerts automatically after each inventory change.
+
+If there are no alerts, display a clean empty state with a green success indicator.
+
+# 12. INVENTORY VALUE AND NUMERIC CALCULATIONS
+
+Implement the following calculations accurately.
+
+### Individual product value
+
+Product Value = Unit Price × Quantity
+
+### Total inventory value
+
+Total Inventory Value = Sum of Product Value for all products
+
+### Total units
+
+Total Units = Sum of Current Stock Quantity
+
+### Low-stock inventory value
+
+Calculate the total inventory value of products classified as low-stock.
+
+### Out-of-stock inventory value
+
+This should normally be zero because those products have no remaining units.
+
+### Category valuation
+
+Calculate total inventory value for each category.
+
+### Stock summary
+
+Calculate the number of products in each stock status.
+
+Use Python numeric operations and functions for these calculations.
+
+Keep calculations in the backend rather than hardcoding numbers in the interface.
+
+Use consistent Indian Rupee formatting.
+
+# 13. REPORTS AND EXPORTS
+
+Create a Reports page with the following report types:
+
+1. Complete Inventory Report.
+2. Low-Stock Report.
+3. Out-of-Stock Report.
+4. Stock Movement Report.
+5. Inventory Valuation Report.
+6. Category Summary Report.
+
+Display useful summary totals before downloading.
+
+Provide filters for category, stock status, product, and date range where applicable.
+
+Include functional download buttons for CSV reports.
+
+CSV files must have meaningful column names and correctly formatted data.
+
+Suggested report columns:
+
+**Inventory Report**
+- Product ID
+- Product Name
+- Category
+- Unit Price
+- Stock Quantity
+- Reorder Level
+- Inventory Value
+- Stock Status
+
+**Low-Stock Report**
+- Product ID
+- Product Name
+- Category
+- Current Quantity
+- Reorder Level
+- Suggested Reorder Quantity
+
+**Stock Movement Report**
+- Transaction ID
+- Date and Time
+- Product ID
+- Product Name
+- Movement Type
+- Quantity Changed
+- Previous Quantity
+- New Quantity
+- Notes
+
+**Valuation Report**
+- Category
+- Product Count
+- Total Units
+- Total Inventory Value
+
+Use Python's csv module or Pandas.
+
+Reports must be generated from real saved data, not static examples.
+
+# 14. DATA STORAGE AND FILE HANDLING
+
+Use JSON files for persistent local storage.
+
+Recommended structure:
+
+- data/inventory.json
+- data/transactions.json
+
+Requirements:
+
+- Automatically create the data directory when necessary.
+- Create initial JSON files if they do not exist.
+- Load existing data when the application starts.
+- Save product changes after successful operations.
+- Save stock movements consistently.
+- Preserve records after application restarts.
+- Handle empty files safely.
+- Handle invalid JSON gracefully.
+- Display understandable error messages.
+- Avoid silently discarding corrupted data.
+- Never overwrite existing user records when loading sample data.
+- Use a safe saving procedure, such as writing to a temporary file and replacing the original file after successful serialization.
+
+Ensure product and transaction data remain consistent. Validate operations before changing data, and handle save failures without reporting false success.
+
+For a local academic project, JSON is sufficient. Do not introduce an unnecessary database or complex cloud infrastructure.
+
+# 15. DATA VALIDATION AND ERROR HANDLING
+
+Implement comprehensive input validation.
+
+### Product IDs
+
+Use Python's regular expression module to validate IDs.
+
+A suitable pattern is:
+
+`^[A-Za-z0-9_-]+$`
+
+Reject empty IDs, invalid characters, and duplicate identifiers.
+
+### Product names
+
+Reject empty or whitespace-only names.
+
+### Prices
+
+- Accept valid positive numeric values.
+- Reject zero and negative prices.
+- Reject non-numeric values.
+- Reject NaN and infinity.
+- Use appropriate numeric handling to avoid avoidable currency rounding errors.
+
+### Quantities
+
+- Accept only non-negative integers for stored stock and reorder levels.
+- Reject negative quantities.
+- Reject invalid decimal quantities.
+- Reject invalid text input.
+
+### Transactions
+
+- Stock additions must use positive integer quantities.
+- Sales must use positive integer quantities.
+- Sales must not exceed available stock.
+- Products must exist before transactions are accepted.
+- Failed transactions must not modify saved stock.
+
+### Error handling
+
+Use appropriate conditional statements, try/except blocks, and clear user-facing messages.
+
+Never silently ignore validation errors.
+
+# 16. SAMPLE DATA AND DEMONSTRATION MODE
+
+Provide a feature to load sample products for project demonstration.
+
+Use these examples:
+
+| Product ID | Product Name | Category | Price | Quantity | Reorder Level |
+|---|---|---|---:|---:|---:|
+| P001 | Notebook | Stationery | ₹50 | 100 | 20 |
+| P002 | Pen | Stationery | ₹10 | 200 | 50 |
+| P003 | School Bag | Accessories | ₹750 | 8 | 10 |
+| P004 | Pencil | Stationery | ₹5 | 15 | 20 |
+| P005 | Water Bottle | Home & Living | ₹150 | 0 | 10 |
+
+These products should demonstrate healthy stock, low stock, and out-of-stock conditions.
+
+Requirements:
+
+- Provide a Load Sample Data button.
+- Do not add duplicate sample products if they already exist.
+- Clearly identify the products as demonstration examples.
+- Do not overwrite existing products.
+- Include an optional Clear Demo Data action with explicit confirmation.
+- Do not delete real user records when clearing demonstration data.
+- Ensure sample data is not automatically reinserted every time the application starts.
+
+The sample data should be optional and should not replace existing user data.
+
+# 17. SETTINGS PAGE
+
+Create a Settings page with:
+
+- Application name and description.
+- Current storage location.
+- Number of stored products.
+- Number of stored transactions.
+- Load sample data option.
+- Clear demonstration data option.
+- Export inventory backup.
+- Export transaction backup.
+
+Use confirmation dialogs for destructive operations.
+
+Do not claim a backup succeeded unless the file was generated successfully.
+
+# 18. PROJECT INFORMATION PAGE
+
+Create a Project Information page containing:
+
+**Project Title:** Inventory and Stock Management System
+
+**Application Name:** StockFlow
+
+**Subject:** CSE1012 – Problem Solving using Python
+
+**Project Objective:**
+
+To develop a Python application that manages products in a small shop or storeroom, tracks stock additions and sales, calculates inventory value, identifies products requiring reorder, and generates inventory reports.
+
+Explain the major features:
+
+- Add and search products.
+- Update stock after additions and sales.
+- Calculate total inventory value.
+- Detect low-stock products.
+- Validate product IDs, prices, and quantities.
+- Store records using JSON files.
+- Generate inventory and stock movement reports.
+
+Explain the Python concepts used:
+
+- Dictionaries.
+- Sets.
+- Lists.
+- Functions.
+- Loops.
+- Conditional statements.
+- Regular expressions.
+- Numeric operations.
+- File handling.
+- Exception handling.
+
+Include basic instructions for running the application.
+
+# 19. PYTHON ACADEMIC REQUIREMENTS
+
+This project must demonstrate the concepts listed in the CSE1012 mini-project guidelines.
+
+Use dictionaries to represent individual products and transaction records.
+
+Use sets to check product ID uniqueness.
+
+Use lists to maintain collections of products and stock transactions.
+
+Use functions for:
+- Adding products.
+- Searching products.
+- Updating product information.
+- Deleting products.
+- Recording stock additions.
+- Recording sales.
+- Validating inputs.
+- Calculating inventory values.
+- Identifying low-stock products.
+- Loading and saving files.
+- Generating reports.
+
+Use loops to process product records and transaction history.
+
+Use conditional statements for validation and stock status calculations.
+
+Use regular expressions to validate product identifiers.
+
+Use numeric operations for inventory valuation and stock updates.
+
+Use JSON and CSV file handling.
+
+Use exception handling for file errors and invalid input.
+
+Keep functions readable, modular, and easy to explain during a practical examination or viva.
+
+Do not hide all business logic inside one large function.
+
+# 20. PROJECT FILE STRUCTURE
+
+Create the following project structure:
+
+StockFlow/
+├── app.py
+├── inventory_manager.py
+├── storage.py
+├── reports.py
+├── requirements.txt
+├── README.md
+└── data/
+    ├── inventory.json
+    └── transactions.json
+
+### app.py
+
+Contains the Streamlit application, navigation, dashboard, forms, tables, charts, and UI styling.
+
+### inventory_manager.py
+
+Contains product management, input validation, inventory calculations, stock operations, low-stock detection, and business logic.
+
+### storage.py
+
+Contains JSON loading, saving, initialization, and safe file-handling functions.
+
+### reports.py
+
+Contains inventory report generation, stock movement exports, CSV formatting, and report calculations where appropriate.
+
+### requirements.txt
+
+Contains all required third-party Python dependencies.
+
+### README.md
+
+Contains the project description, setup instructions, execution commands, features, and project structure.
+
+### JSON files
+
+Contain the initial inventory and transaction data. The application must initialize them safely when necessary.
+
+Additional modules may be created if genuinely useful, but avoid unnecessary complexity.
+
+# 21. EXECUTION INSTRUCTIONS
+
+The project must be runnable locally.
+
+Use these instructions in README.md:
+
+**Step 1:** Install Python 3.10 or later.
+
+**Step 2:** Open a terminal in the StockFlow project directory.
+
+**Step 3:** Install dependencies.
+
+`pip install -r requirements.txt`
+
+**Step 4:** Start the application.
+
+`streamlit run app.py`
+
+**Step 5:** Open the local URL displayed in the terminal.
+
+Make sure the application can start with an empty inventory and does not require sample data to function.
+
+# 22. CODE QUALITY AND TESTING
+
+Write clean, readable, well-organized Python code.
+
+Use meaningful function and variable names.
+
+Add comments to explain important logic and academic concepts.
+
+Avoid unnecessary abstractions and overly complicated architecture.
+
+Before finishing, verify the following:
+
+1. The application starts without errors.
+2. The dashboard opens correctly.
+3. A new product can be added.
+4. Duplicate product IDs are rejected.
+5. Product searches work by ID and name.
+6. Products can be edited and deleted.
+7. Stock additions update quantities correctly.
+8. Sales reduce stock correctly.
+9. Sales cannot exceed available stock.
+10. Inventory values are calculated accurately.
+11. Low-stock and out-of-stock statuses are correct.
+12. Stock movements are recorded.
+13. JSON data persists after restarting the application.
+14. Reports download successfully as CSV.
+15. Sample data does not create duplicates.
+16. Existing user data is protected.
+17. All navigation items and buttons work.
+18. The dark theme is applied consistently across every page.
+19. The dashboard displays real values instead of hardcoded statistics.
+20. File and validation errors are handled clearly.
+
+Where practical, include automated tests for core inventory calculations, validation, and stock transactions.
+
+# 23. FINAL DELIVERABLES
+
+Generate the complete working project, including every required source file.
+
+If supported, create the project files and provide a downloadable ZIP archive.
+
+If you cannot generate downloadable files, provide the complete contents of every file, one file at a time, with its exact filename and clear instructions.
+
+Do not provide pseudocode in place of implementation.
+
+Do not omit important functions.
+
+Do not leave placeholder buttons or non-functional navigation.
+
+Do not use static dashboard data as a substitute for real calculations.
+
+Do not claim to have tested the application unless you have actually executed the relevant tests.
+
+If any feature cannot be implemented in your current environment, clearly explain the limitation and provide the complete alternative implementation.
+
+# 24. FINAL DESIGN EXPECTATION
+
+The finished application should visually resemble the uploaded StockFlow dashboard reference:
+
+- Deep navy interface.
+- Cyan and electric blue highlights.
+- Purple gradient primary buttons.
+- Dark blue summary cards.
+- Neon-style icons.
+- Product distribution donut chart.
+- Stock overview chart.
+- Recent products table.
+- Quick actions panel.
+- Stock alerts section.
+- Sidebar navigation.
+- Top search bar and user profile.
+- Rounded cards and subtle blue borders.
+- Green, amber, and red stock-status badges.
+
+The interface must be attractive and professional, while the underlying Python application remains fully functional, academically appropriate, and easy to explain.
+
+**Final instruction:** First inspect the capabilities of your current environment. Then implement the complete StockFlow project using the required Python and Streamlit architecture. Preserve the full inventory functionality, follow the uploaded reference image's colour scheme, generate all source files, and provide clear instructions for running and testing the finished project. If your environment cannot execute Python and Streamlit directly, still generate the complete local project rather than substituting an unrelated technology stack.
